@@ -15,11 +15,13 @@ namespace ModelingYourLife
 
         enum Status
         {
-            Stunned, Slowed, Snared, Poisoned, Hastened
+            Normal, Stunned, Slowed, Snared, Poisoned, Hastened
         }
 
-        // Mage Name
+        // Mage Name, State, and Status
         public string name;
+        public State currentState = State.Alive;
+        //public Status currentStatus = Status.Normal;
 
         // Mage Base Stats
         private int hp;
@@ -54,16 +56,65 @@ namespace ModelingYourLife
             Console.WriteLine(rng.Next(1, 6));
         }
 
-        public void LowerHP(int fire, int frost)
+        public void LowerHP()
         {
 
+        }
+
+        public void Attack(Barbarian enemy)
+        {
+            Roll();
+            int random = int.Parse(Console.ReadLine());
+
+            if (random % 2 != 0)
+            {
+                Console.WriteLine($"{name} cast frostbolt on {enemy.name} for {frostbolt} damage!");
+                enemy.LowerHP();
+            }
+            else
+            {
+                Console.WriteLine($"{name} cast fireball on {enemy.name} for {fireball} damage!");
+                enemy.LowerHP();
+            }
         }
 
         public void Attack(Mage enemy)
         {
             Roll();
+            int random = int.Parse(Console.ReadLine());
 
-            //if ()
+            if (random % 2 != 0)
+            {
+                Console.WriteLine($"{name} cast frostbolt on {enemy.name} for {frostbolt} damage!");
+                enemy.LowerHP();
+            }
+            else
+            {
+                Console.WriteLine($"{name} cast fireball on {enemy.name} for {fireball} damage!");
+                enemy.LowerHP();
+            }
+        }
+
+        public void Attack(Assassin enemy)
+        {
+            Roll();
+            int random = int.Parse(Console.ReadLine());
+
+            if (random % 2 != 0)
+            {
+                Console.WriteLine($"{name} cast frostbolt on {enemy.name} for {frostbolt} damage!");
+                enemy.LowerHP();
+            }
+            else
+            {
+                Console.WriteLine($"{name} cast fireball on {enemy.name} for {fireball} damage!");
+                enemy.LowerHP();
+            }
+        }
+
+        public override string ToString()
+        {
+            return $"{name} : {hp} : {frostbolt} : {fireball}";
         }
     }
 }

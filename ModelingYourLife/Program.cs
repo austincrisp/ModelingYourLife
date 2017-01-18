@@ -34,18 +34,21 @@ namespace ModelingYourLife
             {
                 playerOneChar = character[0];
                 Console.WriteLine($"{playerOneName} has chosen Barbarian.");
+                Barbarian barbOne = new Barbarian($"{playerOneName}");
                 Console.WriteLine();
             }
             else if (choiceOne == "2")
             {
                 playerOneChar = character[1];
                 Console.WriteLine($"{playerOneName} has chosen Mage.");
+                Mage mageOne = new Mage($"{playerOneName}");
                 Console.WriteLine();
             }
             else
             {
                 playerOneChar = character[2];
                 Console.WriteLine($"{playerOneName} has chosen Assassin.");
+                Assassin rogueOne = new Assassin($"{playerOneName}");
                 Console.WriteLine();
             }
 
@@ -56,18 +59,21 @@ namespace ModelingYourLife
             {
                 playerTwoChar = character[0];
                 Console.WriteLine($"{playerTwoName} has chosen Barbarian.");
+                Barbarian barbTwo = new Barbarian($"{playerTwoName}");
                 Console.WriteLine();
             }
             else if (choiceTwo == "2")
             {
                 playerTwoChar = character[1];
                 Console.WriteLine($"{playerTwoName} has chosen Mage.");
+                Mage mageTwo = new Mage($"{playerTwoName}");
                 Console.WriteLine();
             }
             else
             {
                 playerTwoChar = character[2];
                 Console.WriteLine($"{playerTwoName} has chosen Assassin.");
+                Assassin rogueTwo = new Assassin($"{playerTwoName}");
                 Console.WriteLine();
             }
             Console.Clear();

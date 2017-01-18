@@ -18,8 +18,10 @@ namespace ModelingYourLife
             Stunned, Slowed, Snared, Poisoned, Hastened
         }
 
-        // Barbarian Name
+        // Barbarian Name, State, and Status
         public string name;
+        //public State currentState = State.Alive;
+        //public Status currentStatus = Status.Normal;
 
         // Barbarian Base Stats
         private int hp;
@@ -30,7 +32,6 @@ namespace ModelingYourLife
         private int mr;
 
         // Barbarian Abilities
-        private int attack;
         private int slash;
         private int shieldSlam;
         private bool spellReflect;
@@ -42,12 +43,77 @@ namespace ModelingYourLife
             intelligence = 2;
             dexterity = 7;
             strength = 13;
-            attack = 4;
             slash = 10;
             shieldSlam = 8;
             spellReflect = false;
             armor = 40;
             mr = 15;
+        }
+        public void Roll()
+        {
+            var rng = new Random();
+            Console.WriteLine(rng.Next(1, 6));
+        }
+
+        public void LowerHP()
+        {
+
+        }
+
+        public void Attack(Barbarian enemy)
+        {
+            Roll();
+            int random = int.Parse(Console.ReadLine());
+
+            if (random % 2 != 0)
+            {
+                Console.WriteLine($"{name} used shield slam on {enemy.name} for {shieldSlam} damage!");
+                enemy.LowerHP();
+            }
+            else
+            {
+                Console.WriteLine($"{name} used slash on {enemy.name} for {slash} damage!");
+                enemy.LowerHP();
+            }
+        }
+
+        public void Attack(Mage enemy)
+        {
+            Roll();
+            int random = int.Parse(Console.ReadLine());
+
+            if (random % 2 != 0)
+            {
+                Console.WriteLine($"{name} used shield slam on {enemy.name} for {shieldSlam} damage!");
+                enemy.LowerHP();
+            }
+            else
+            {
+                Console.WriteLine($"{name} used slash on {enemy.name} for {slash} damage!");
+                enemy.LowerHP();
+            }
+        }
+
+        public void Attack(Assassin enemy)
+        {
+            Roll();
+            int random = int.Parse(Console.ReadLine());
+
+            if (random % 2 != 0)
+            {
+                Console.WriteLine($"{name} used shield slam on {enemy.name} for {shieldSlam} damage!");
+                enemy.LowerHP();
+            }
+            else
+            {
+                Console.WriteLine($"{name} used slash on {enemy.name} for {slash} damage!");
+                enemy.LowerHP();
+            }
+        }
+
+        public override string ToString()
+        {
+            return $"{name} : {hp} : {slash} : {shieldSlam}";
         }
     }
 }
