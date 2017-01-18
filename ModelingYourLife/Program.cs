@@ -10,17 +10,67 @@ namespace ModelingYourLife
     {
         static void Main(string[] args)
         {
-            string playerOne = "";
-            string playerTwo = "";
+            string playerOneName = "";
+            string playerOneChar = "";
+            string choiceOne = "";
+            string playerTwoName = "";
+            string playerTwoChar = "";
+            string choiceTwo = "";
+            string[] character = { "Barbarian", "Mage", "Assassin" };
 
-            Console.WriteLine("Dungeon Craweler Showdown!");
+            Console.WriteLine("Dungeon Crawler Showdown! \n");
 
             Console.Write("Player One enter a name: ");
-            playerOne = Console.ReadLine();
+            playerOneName = Console.ReadLine();
+            Console.WriteLine();
             Console.Write("Player Two enter a name: ");
-            playerTwo = Console.ReadLine();
+            playerTwoName = Console.ReadLine();
+            Console.WriteLine();
 
-            Console.Write("Please select your character: ")
+            Console.Write($"{playerOneName}, please choose a number between 1-3.  This will be your character: ");
+            choiceOne = Console.ReadLine();
+
+            if (choiceOne == "1")
+            {
+                playerOneChar = character[0];
+                Console.WriteLine($"{playerOneName} has chosen Barbarian.");
+                Console.WriteLine();
+            }
+            else if (choiceOne == "2")
+            {
+                playerOneChar = character[1];
+                Console.WriteLine($"{playerOneName} has chosen Mage.");
+                Console.WriteLine();
+            }
+            else
+            {
+                playerOneChar = character[2];
+                Console.WriteLine($"{playerOneName} has chosen Assassin.");
+                Console.WriteLine();
+            }
+
+            Console.Write($"{playerTwoName}, please choose a number between 1-3.  This will be your character: ");
+            choiceTwo = Console.ReadLine();
+
+            if (choiceTwo == "1")
+            {
+                playerTwoChar = character[0];
+                Console.WriteLine($"{playerTwoName} has chosen Barbarian.");
+                Console.WriteLine();
+            }
+            else if (choiceTwo == "2")
+            {
+                playerTwoChar = character[1];
+                Console.WriteLine($"{playerTwoName} has chosen Mage.");
+                Console.WriteLine();
+            }
+            else
+            {
+                playerTwoChar = character[2];
+                Console.WriteLine($"{playerTwoName} has chosen Assassin.");
+                Console.WriteLine();
+            }
+            Console.Clear();
         }
     }
 }

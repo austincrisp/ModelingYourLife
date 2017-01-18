@@ -34,7 +34,7 @@ namespace ModelingYourLife
         private int frostbolt;
         private bool focus;
 
-        public Mage (string _name)
+        public Mage(string _name)
         {
             name = _name;
             hp = 135;
@@ -48,10 +48,22 @@ namespace ModelingYourLife
             mr = 40;
         }
 
-        public void Attack()
+        public void Roll()
         {
-            Console.Write($"What would you like to cast {name}? ");
-            Console.ReadLine
+            var rng = new Random();
+            Console.WriteLine(rng.Next(1, 6));
+        }
+
+        public void LowerHP(int fire, int frost)
+        {
+
+        }
+
+        public void Attack(Mage enemy)
+        {
+            Roll();
+
+            //if ()
         }
     }
 }
